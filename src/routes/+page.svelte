@@ -1,13 +1,30 @@
 <script lang="ts">
-	import Car from '$lib/assets/On-Demand_Ride_Hailing_Software_Solution___Zetaton-removebg-preview.png';
+	import Car from '$lib/assets/ride.png';
 	import Appstore from '$lib/assets/googleplay.png';
 	import Googlplay from '$lib/assets/new apple.png';
     import Phone from "$lib/assets/Annotation_2025-02-28_111717-removebg-preview.png"
     import Group from "$lib/assets/Group.svg"
+	import { ClockIcon, MapIcon, ShieldCheckIcon } from "lucide-svelte";
+
+
+	const features = [
+		{
+			icon: ClockIcon,
+			title: "Fast Pickup",
+			description: "Get picked up within minutes of booking your ride",
+		},
+		{
+			icon: MapIcon,
+			title: "Logistics",
+			description: "Seamless ride coordination with AI-driven routing, real-time tracking, and optimized scheduling for fast, reliable, and eco-friendly trips",
+		},
+		{
+			icon: ShieldCheckIcon,
+			title: "Safe Rides",
+			description: "Verified drivers and real-time trip monitoring for your safety",
+		},
+	];
 	
-   
-
-
 </script>
 
 <div class="flex min-h-screen flex-col items-center font-Poppins justify-center bg-orange-500">
@@ -24,7 +41,7 @@
 
 		<!-- App Store Badges (Car Image) -->
 		<div class="mb-4 -mt-8 flex flex-col items-center sm:mb-8">
-			<img src={Car} alt="Freedom Car" class="md:w-[55rem] w-[20rem] mt-6 md:mt-0" />
+			<img src={Car} alt="Freedom Car" class="md:w-[40rem] w-[20rem] mt-8 md:mt-[2rem]" />
 		</div>
 
 		<!-- Benefits -->
@@ -57,8 +74,25 @@
 		</div>
 	</div>
 
+	<!-- Features Section -->
+	<section id="features" class="container py-20 text-white">
+		<h2 class="text-center text-3xl font-bold md:text-4xl">Why Choose Freedom</h2>
+		<div class="mt-12 grid gap-8 md:grid-cols-3">
+			{#each features as feature}
+				<div>
+					<div>
+						<svelte:component this={feature.icon} class="h-12 w-12 text-primary text-white" />
+						<h2 class="mt-4 text-2xl font-bold">{feature.title}</h2>
+						<p>{feature.description}</p>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</section>
+	
+
 	<!-- App Download Section -->
-	<section class="relative mt-[1rem] flex w-full mb-[1rem] h-[50vh] md:px-5 flex-row justify-center items-center bg-white text-center">
+	<section class="relative mt-[1rem] flex w-full mb-[1rem] md:h-[70vh] h-[50vh] md:px-5 flex-row justify-center items-center bg-white text-center">
 		<!-- Title -->
 		<div class='flex flex-col items-center justify-center '>
             <h2 class="text-[1.8rem] mt-5">Ride Beyond Limits</h2>
