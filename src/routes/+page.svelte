@@ -75,7 +75,7 @@
 	</div>
 
 	<!-- Features Section -->
-	<section id="features" class="container py-20 text-white">
+	<section id="features" class="container py-20 px-2 md:px-0 text-white">
 		<h2 class="text-center text-3xl font-bold md:text-4xl">Why Choose Freedom</h2>
 		<div class="mt-12 grid gap-8 md:grid-cols-3">
 			{#each features as feature}
